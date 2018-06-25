@@ -12,6 +12,7 @@
 #import "MultimediaViewController.h"
 #import "ContactViewController.h"
 #import "AppointmentsViewController.h"
+#import "StudentsZoneViewController.h"
 
 //COMMIT TEST NALLA//
 
@@ -77,6 +78,8 @@
      withBlock:^(FIRDataSnapshot *snapshot) {
           for (NSArray * stArr in snapshot.value) {
              [arrModules addObject:stArr];
+              NSLog(@"%@",arrModules);
+
          }
          [_collectionView reloadData];
      }withCancelBlock:^(NSError * error){
@@ -232,12 +235,17 @@
     }
     else if (indexPath.row == 7)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+        StudentsZoneViewController * studentsZone = [[StudentsZoneViewController alloc] init];
+        [self.navigationController pushViewController:studentsZone animated:YES];
+        
+       /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                                         message:@"Under Development"
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
+        */
+        
     }
     else if (indexPath.row == 8)
     {
