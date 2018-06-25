@@ -19,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"Gallery";
+
     // Do any additional setup after loading the view.
     FIRStorage *storage = [FIRStorage storage];
     

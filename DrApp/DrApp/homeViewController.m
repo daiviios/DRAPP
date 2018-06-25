@@ -29,12 +29,18 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBarHidden = YES;
+    
+}
 
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBarHidden = YES;
     arrModules = [[NSMutableArray alloc] init];
     self.ref = [[FIRDatabase database] reference];
     // Do any additional setup after loading the view, typically from a nib.

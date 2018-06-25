@@ -19,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"StudentsZone";
+
     studentsListArray = [[NSMutableArray alloc]init];
     self.ref = [[FIRDatabase database] reference];
 

@@ -18,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Multimedia";
+
     // Do any additional setup after loading the view.
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-60)];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -25,14 +27,14 @@
 
     //self.view.backgroundColor = [UIColor colorWithRed:((float)(rand()%255))/255 green:((float)(rand()%255))/255 blue:((float)(rand()%255))/255 alpha:1.];
 
-    UIImageView *imageView =[[UIImageView alloc]initWithFrame:CGRectMake(10, 20, self.view.frame.size.width-20, 100)];
+    UIImageView *imageView =[[UIImageView alloc]initWithFrame:CGRectMake(10, 60, self.view.frame.size.width-20, 100)];
     imageView.image = [UIImage imageNamed:@"multiLogo.png"];
     imageView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:imageView];
     
     
     UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
-    mMediatableView = [[UITableView alloc] initWithFrame:CGRectMake(0,160,self.view.frame.size.width, self.view.frame.size.height)];
+    mMediatableView = [[UITableView alloc] initWithFrame:CGRectMake(0,200,self.view.frame.size.width, self.view.frame.size.height-100)];
     mMediatableView.delegate = self;
     mMediatableView.dataSource = self;
     mMediatableView.tableFooterView = footer;

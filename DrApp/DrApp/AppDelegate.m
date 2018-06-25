@@ -27,10 +27,11 @@
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
      self.window.rootViewController = self.navigationController;
-    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    //self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    self.navigationController.navigationBar.backgroundColor= [UIColor colorWithRed:255.0/255.0 green:71.0/255.0 blue:87.0/255.0 alpha:1.0];
     [self.window makeKeyAndVisible];
     
-    self.navigationController.navigationBarHidden = YES;
+   // self.navigationController.navigationBarHidden = YES;
     [self tabbarControl];
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
@@ -49,10 +50,10 @@
     
     return YES;
 }
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    return YES;
-}
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+//{
+//    return NO;
+//}
 - (void)tabbarControl
 {
     selectedId = 0;

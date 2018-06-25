@@ -17,6 +17,8 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    self.title = @"Contact";
+
     ref = [[FIRDatabase database] reference];
     arrdetails = [[NSMutableArray alloc] init];
     innerArray = [[NSMutableArray alloc] init];

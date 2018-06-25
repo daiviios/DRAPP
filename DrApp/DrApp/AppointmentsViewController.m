@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Appointments";
 
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-60)];
     self.view.backgroundColor=[UIColor whiteColor];
@@ -31,7 +32,7 @@
     [self.view addSubview:bgView];
     
     
-    UIImageView  * profileImg = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width/2)-75,10,150,150)];
+    UIImageView  * profileImg = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width/2)-75,70,150,150)];
     profileImg.layer.cornerRadius = 75.0f;
     profileImg.contentMode = UIViewContentModeScaleAspectFill;
     profileImg.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -40,7 +41,7 @@
     [profileImg.layer setMasksToBounds:YES];
     [self.view addSubview:profileImg];
 
-    UILabel *headerLbl=[[UILabel alloc]initWithFrame:CGRectMake(0, 160, self.view.frame.size.width, 40)];
+    UILabel *headerLbl=[[UILabel alloc]initWithFrame:CGRectMake(0, 220, self.view.frame.size.width, 40)];
     [headerLbl setText:@"DR.SUVENDU NARAYANA MISHRA"];//Set text in label.
     headerLbl.textColor = [UIColor whiteColor];
     headerLbl.font = [UIFont fontWithName:@"Futura-Medium" size:20.0f];
@@ -49,7 +50,7 @@
     [headerLbl setNumberOfLines:0];//Set number of lines in label.
     [self.view addSubview:headerLbl];//A
     
-    UILabel *headerLblDesc=[[UILabel alloc]initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 60)];
+    UILabel *headerLblDesc=[[UILabel alloc]initWithFrame:CGRectMake(0, 260, self.view.frame.size.width, 60)];
     [headerLblDesc setText:@"       Consultant Neuropsychiatrist, Sexologist, Drug De-addiction Specialist"];//Set text in label.
     headerLblDesc.lineBreakMode = UILineBreakModeWordWrap;// add this line
     headerLblDesc.numberOfLines = 0;
@@ -60,7 +61,7 @@
     [headerLblDesc sizeToFit];
     [self.view addSubview:headerLblDesc];//A
     
-    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(10, 250, self.view.frame.size.width-20, self.view.frame.size.height-100)];
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(10, 310, self.view.frame.size.width-20, self.view.frame.size.height-160)];
     paddingView.backgroundColor=[UIColor clearColor];
     [self.view addSubview:paddingView];
     

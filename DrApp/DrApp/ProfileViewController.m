@@ -16,10 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // self.navigationController.navigationBarHidden = NO;
-    //self.title = @"Profile";
+     self.title = @"Profile";
     // Do any additional setup after loading the view.
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-60)];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-100)];
     //self.view.backgroundColor = [UIColor colorWithRed:((float)(rand()%255))/255 green:((float)(rand()%255))/255 blue:((float)(rand()%255))/255 alpha:1.];
     //self.view.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:71.0/255.0 blue:87.0/255.0 alpha:1.0];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -46,7 +45,7 @@
     //[profileImg setBackgroundColor:[UIColor colorWithRed:((float)(rand()%255))/255 green:((float)(rand()%255))/255 blue:((float)(rand()%255))/255 alpha:1.]];
     [self.view addSubview:profileImg];
      */
-    UIView *profileHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 240)];
+    UIView *profileHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, 240)];
     profileHeaderView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:71.0/255.0 blue:87.0/255.0 alpha:1.0];
     [self.view addSubview:profileHeaderView];
     
@@ -59,7 +58,7 @@
     [profileImg.layer setMasksToBounds:YES];
     [profileHeaderView addSubview:profileImg];
     
-    UILabel *headerLbl=[[UILabel alloc]initWithFrame:CGRectMake(0, 160, self.view.frame.size.width, 40)];
+    UILabel *headerLbl=[[UILabel alloc]initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 40)];
     [headerLbl setText:@"DR.SUVENDU NARAYANA MISHRA"];//Set text in label.
     headerLbl.textColor = [UIColor whiteColor];
     headerLbl.font = [UIFont fontWithName:@"Futura-Medium" size:20.0f];
@@ -68,7 +67,7 @@
     [headerLbl setNumberOfLines:0];//Set number of lines in label.
     [self.view addSubview:headerLbl];//A
     
-    UILabel *headerLblDesc=[[UILabel alloc]initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 60)];
+    UILabel *headerLblDesc=[[UILabel alloc]initWithFrame:CGRectMake(0, 240, self.view.frame.size.width, 60)];
     [headerLblDesc setText:@"       Consultant Neuropsychiatrist, Sexologist, Drug De-addiction Specialist"];//Set text in label.
     headerLblDesc.lineBreakMode = UILineBreakModeWordWrap;// add this line
     headerLblDesc.numberOfLines = 0;
@@ -79,7 +78,7 @@
     [headerLblDesc sizeToFit];
     [self.view addSubview:headerLblDesc];//A
     
-    UIWebView *aWeb = [[UIWebView alloc] initWithFrame:CGRectMake(0, profileImg.frame.origin.y+profileImg.frame.size.height+80, self.view.frame.size.width, self.view.frame.size.height-130)];
+    UIWebView *aWeb = [[UIWebView alloc] initWithFrame:CGRectMake(0, profileImg.frame.origin.y+profileImg.frame.size.height+120, self.view.frame.size.width, self.view.frame.size.height-170)];
     aWeb.delegate = self;
     aWeb.backgroundColor = [UIColor clearColor];
     NSMutableString *urlStr = [NSMutableString new];

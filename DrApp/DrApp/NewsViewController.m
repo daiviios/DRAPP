@@ -20,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"News";
+
     FIRStorage *storage = [FIRStorage storage];
     
     storageRef = [storage reference];
