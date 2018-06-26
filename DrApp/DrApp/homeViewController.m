@@ -30,17 +30,26 @@
 {
     self.navigationController.navigationBarHidden = YES;
     
+   
+    for (UIView *subUIView in self.navigationController.view.subviews) {
+        if (subUIView.tag == 102) {
+            subUIView.hidden = YES;
+        }
+     }
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    self.navigationController.navigationBarHidden = NO;
-}
+    for (UIView *subUIView in self.navigationController.view.subviews) {
+        if (subUIView.tag == 102) {
+            subUIView.hidden = NO;
+        }
+    }
+ }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationBarHidden = YES;
     arrModules = [[NSMutableArray alloc] init];
     self.ref = [[FIRDatabase database] reference];
     // Do any additional setup after loading the view, typically from a nib.

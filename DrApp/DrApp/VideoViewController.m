@@ -20,9 +20,9 @@
     self.title = @"Youtube";
 
     // Do any additional setup after loading the view.
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-60)];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0,44,self.view.frame.size.width,self.view.frame.size.height-49)];
     self.view.backgroundColor = [UIColor colorWithRed:((float)(rand()%255))/255 green:((float)(rand()%255))/255 blue:((float)(rand()%255))/255 alpha:1.];
-    tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width, self.view.frame.size.height)];
+    tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,44,self.view.frame.size.width, self.view.frame.size.height)];
     tableView.delegate = self;
     tableView.dataSource = self;
     

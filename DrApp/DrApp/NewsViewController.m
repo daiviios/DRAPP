@@ -26,10 +26,10 @@
     
     storageRef = [storage reference];
     // Do any additional setup after loading the view.
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-60)];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0,44,self.view.frame.size.width,self.view.frame.size.height-49)];
     self.view.backgroundColor = [UIColor colorWithRed:((float)(rand()%255))/255 green:((float)(rand()%255))/255 blue:((float)(rand()%255))/255 alpha:1.];
     UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
-    newstableView = [[UITableView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width, self.view.frame.size.height)];
+    newstableView = [[UITableView alloc] initWithFrame:CGRectMake(0,44,self.view.frame.size.width, self.view.frame.size.height)];
     newstableView.delegate = self;
     newstableView.dataSource = self;
     newstableView.tableFooterView = footer;

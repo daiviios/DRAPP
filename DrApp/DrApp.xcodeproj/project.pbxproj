@@ -21,6 +21,7 @@
 		9F2E406B20AF457C00164655 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E406A20AF457C00164655 /* main.m */; };
 		9F2E407420AF5D3600164655 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E407320AF5D3600164655 /* ProfileViewController.m */; };
 		9F2E407720AF66A800164655 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E407620AF66A800164655 /* NewsViewController.m */; };
+		9F492BDF20E2C4EB00D6B1AD /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F492BDE20E2C4E900D6B1AD /* back.png */; };
 		9FD940A620AFF3450088F3FD /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD940A520AFF3450088F3FD /* NewsDetailViewController.m */; };
 		9FDD519F20B04EAE006F8C53 /* MultimediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD519E20B04EAE006F8C53 /* MultimediaViewController.m */; };
 		9FDD51A320B0526B006F8C53 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD51A220B0526B006F8C53 /* VideoViewController.m */; };
@@ -69,6 +70,7 @@
 		9F2E407320AF5D3600164655 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		9F2E407520AF66A800164655 /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		9F2E407620AF66A800164655 /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		9F492BDE20E2C4E900D6B1AD /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		9FD940A420AFF3450088F3FD /* NewsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		9FD940A520AFF3450088F3FD /* NewsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		9FDD519D20B04EAE006F8C53 /* MultimediaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultimediaViewController.h; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		3D96320520E1199E00FBB84E /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				9F492BDE20E2C4E900D6B1AD /* back.png */,
 				3D96320620E1199E00FBB84E /* arrow.png */,
 			);
 			path = Misc;
@@ -331,6 +334,7 @@
 				C637C98B20B9881A00866A59 /* CONTACT@2x.png in Resources */,
 				C637C99B20B9B77000866A59 /* contact.png in Resources */,
 				C637C99D20B9B77000866A59 /* newsIcon.png in Resources */,
+				9F492BDF20E2C4EB00D6B1AD /* back.png in Resources */,
 				C637C98C20B9881A00866A59 /* SHARE@2x.png in Resources */,
 				9F1930BE20B1B2C800CAC49B /* 1Home.png in Resources */,
 				9F1930BF20B1B2C800CAC49B /* 1Contacts.png in Resources */,

@@ -18,7 +18,7 @@
     [super viewDidLoad];
     self.title = @"Appointments";
 
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-60)];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0,44,self.view.frame.size.width,self.view.frame.size.height-49)];
     self.view.backgroundColor=[UIColor whiteColor];
     
     UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc]

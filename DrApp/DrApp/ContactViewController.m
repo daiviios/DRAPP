@@ -45,7 +45,7 @@
 {
     // Scroll View
     
-    scroll = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 10.0f, self.view.frame.size.width, self.view.frame.size.height)];
+    scroll = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 54.0f, self.view.frame.size.width, self.view.frame.size.height)];
     scroll.backgroundColor=[UIColor clearColor];
     scroll.delegate=self;
     scroll.scrollEnabled = YES;

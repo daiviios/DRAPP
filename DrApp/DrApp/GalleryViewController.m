@@ -26,7 +26,7 @@
     FIRStorage *storage = [FIRStorage storage];
     
     storageRef = [storage reference];
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-60)];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0,44,self.view.frame.size.width,self.view.frame.size.height-49)];
     self.view.backgroundColor = [UIColor whiteColor];
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     flow.itemSize = CGSizeMake(self.view.frame.size.width/2-20, 250);
@@ -34,7 +34,7 @@
     flow.minimumInteritemSpacing = 20;
     flow.minimumLineSpacing = 20;
 //    UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
-    _collectionView=[[UICollectionView alloc] initWithFrame:CGRectMake(10,10, self.view.frame.size.width-20, self.view.frame.size.height-10) collectionViewLayout:flow];
+    _collectionView=[[UICollectionView alloc] initWithFrame:CGRectMake(10,44, self.view.frame.size.width-20, self.view.frame.size.height-10) collectionViewLayout:flow];
     [_collectionView setDataSource:self];
     [_collectionView setDelegate:self];
     

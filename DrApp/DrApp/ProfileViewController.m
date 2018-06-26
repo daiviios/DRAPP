@@ -18,7 +18,7 @@
     [super viewDidLoad];
      self.title = @"Profile";
     // Do any additional setup after loading the view.
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-100)];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0,44,self.view.frame.size.width,self.view.frame.size.height-90)];
     //self.view.backgroundColor = [UIColor colorWithRed:((float)(rand()%255))/255 green:((float)(rand()%255))/255 blue:((float)(rand()%255))/255 alpha:1.];
     //self.view.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:71.0/255.0 blue:87.0/255.0 alpha:1.0];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -46,7 +46,7 @@
     [self.view addSubview:profileImg];
      */
     UIView *profileHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, 240)];
-    profileHeaderView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:71.0/255.0 blue:87.0/255.0 alpha:1.0];
+    profileHeaderView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:171.0/255.0 blue:87.0/255.0 alpha:1.0];
     [self.view addSubview:profileHeaderView];
     
     UIImageView  * profileImg = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width/2)-75,10,150,150)];
