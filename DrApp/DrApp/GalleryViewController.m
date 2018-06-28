@@ -7,7 +7,7 @@
 //
 
 #import "GalleryViewController.h"
-
+#import "GalleryView.h"
 @interface GalleryViewController ()
 {
     FIRStorageReference *islandRef;
@@ -78,7 +78,21 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
+    GalleryView * gView = [[GalleryView alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 55)];
+    gView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5];
+    NSString * imgreference = [NSString stringWithFormat:@"Gallery/mpic%d.jpg",(int)indexPath.row];
+    islandRef = [storageRef child:imgreference];
+    // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+    [islandRef dataWithMaxSize:1 * 1024 * 1024 completion:^(NSData *data, NSError *error){
+        if (error != nil) {
+            // Uh-oh, an error occurred!
+        } else {
+            // Data for "images/island.jpg" is returned
+            [gView imageView:[UIImage imageWithData:data]];
+
+        }
+    }];
+    [self.view addSubview:gView];
     
 }
 - (void)didReceiveMemoryWarning {
