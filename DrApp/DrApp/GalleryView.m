@@ -21,19 +21,24 @@
 
 -(void)imageView :(UIImage *)img
 {
- 
+    
+    
+    UIImageView * imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, self.frame.size.width-20, self.frame.size.height - 60)];
+    [imgView setImage:img];
+    [imgView setAdjustsImageSizeForAccessibilityContentSizeCategory:YES];
+    imgView.center = [self convertPoint:self.center fromView:self.superview];
+    [self addSubview:imgView];
+    
+    
+
     UIButton * closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     closeBtn.frame = CGRectMake(self.frame.size.width-50, 0, 50, 50);
-    closeBtn.backgroundColor = [UIColor redColor];
+    [closeBtn setImage:[UIImage imageNamed:@"closebtn.png"] forState:UIControlStateNormal];
     [closeBtn addTarget:self action:@selector(closeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:closeBtn];
-    
-    
-    UIImageView * imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 50, self.frame.size.width-20, self.frame.size.height - 100)];
-    [imgView setImage:img];
-    [self addSubview:imgView];
-
 }
+
+
 
 -(void)closeBtnClick
 {
