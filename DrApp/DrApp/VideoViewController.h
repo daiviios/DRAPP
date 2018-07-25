@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
+@import Firebase;
 @interface VideoViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 {
     UITableView *tableView;
+    NSMutableArray * videoArray;
 }
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 @end
