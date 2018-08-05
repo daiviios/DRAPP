@@ -10,7 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 @import Firebase;
-@interface VideoViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface VideoViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate>
 
 {
     UITableView *tableView;

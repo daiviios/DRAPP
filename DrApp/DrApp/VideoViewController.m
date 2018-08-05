@@ -77,7 +77,7 @@
         cell.backgroundColor = [UIColor clearColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(5,5,self.view.frame.size.width-10,210)];
+        /*UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(5,5,self.view.frame.size.width-10,210)];
         
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.layer.shadowOffset=CGSizeMake(1.0, 1.0);
@@ -85,8 +85,17 @@
         imageView.tag = 1201;
         imageView.backgroundColor=[UIColor blackColor];
         [cell.contentView addSubview:imageView];
+        */
+        UIWebView * videoView = [[UIWebView alloc] init];
+        videoView.frame = CGRectMake(5, 5, self.view.frame.size.width-10, 210);
+        videoView.delegate= self;
+        videoView.tag = 1201;
+        videoView.scrollView.scrollEnabled =  NO;
+        videoView.scrollView.bounces = NO;
+        [videoView setBackgroundColor:[UIColor clearColor]];       
+        [cell.contentView addSubview:videoView];
         
-        UILabel *titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(15,imageView.frame.origin.y+imageView.frame.size.height+5,cell.contentView.frame.size.width-10, 70)];
+        UILabel *titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(15,videoView.frame.origin.y+videoView.frame.size.height+5,self.view.frame.size.width-10, 70)];
         [titleLbl setBackgroundColor:[UIColor clearColor]];
         titleLbl.textAlignment = 0;
         titleLbl.tag = 1301;
@@ -97,27 +106,39 @@
     
     UILabel * vlbl = (UILabel *)[cell viewWithTag:1301];
     vlbl.text = [[videoArray valueForKey:@"title"] objectAtIndex:indexPath.row] ;
-
-    UIImageView * vImg = (UIImageView *)[cell viewWithTag:1201];
-    dispatch_async(dispatch_get_global_queue(0,0), ^{
-        NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [[videoArray valueForKey:@"thumbnail_url"] objectAtIndex:indexPath.row]]];
-        if ( data == nil )
-            return;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // WARNING: is the cell still using the same data by this point??
-            vImg.image = [UIImage imageWithData: data];
-        });
-    });
     
+    
+    NSString * videoID = [[videoArray valueForKey:@"videoID"] objectAtIndex:indexPath.row];
+    UIWebView * webView = (UIWebView *)[cell viewWithTag:1201];
+    NSString *htmlString = [NSString stringWithFormat:@"<html><head>\
+                            <meta name = \"viewport\" content = \"initial-scale = 40.0, user-scalable = no, width = %f\"/></head>\
+                            <body style=\"background:#FFF;margin-top10px;margin-left:10px\">\
+                            <div><object width=\"%f\" height=\"210\">\
+                            <param name=\"movie\" value=\"http://www.youtube.com/v/%@&f=gdata_videos\"></param>\
+                            <param name=\"wmode\" value=\"transparent\"></param>\
+                            <embed src=\"http://www.youtube.com/v/%@&f=gdata_videos\"\
+                            type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"%f\" height=\"210\"></embed>\
+                            </object></div></body></html>",self.view.frame.size.width-10,self.view.frame.size.width-10,videoID,videoID,self.view.frame.size.width-10 ];
+    [webView loadHTMLString:htmlString baseURL:[NSURL URLWithString:@"http://www.youtube.com"]];
+
+//    UIImageView * vImg = (UIImageView *)[cell viewWithTag:1201];
+//    dispatch_async(dispatch_get_global_queue(0,0), ^{
+//        NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [[videoArray valueForKey:@"thumbnail_url"] objectAtIndex:indexPath.row]]];
+//        if ( data == nil )
+//            return;
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            // WARNING: is the cell still using the same data by this point??
+//            vImg.image = [UIImage imageWithData: data];
+//        });
+//    });
+//
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)atableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSURL *movieURL = [NSURL URLWithString:[[videoArray valueForKey:@"videoUrl"] objectAtIndex:indexPath.row]];
-    MPMoviePlayerViewController *mpcontroller = [[MPMoviePlayerViewController alloc] initWithContentURL:movieURL];
-    [self.navigationController presentMoviePlayerViewControllerAnimated:mpcontroller];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -128,7 +149,7 @@
 /*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// In a storyboa  rd-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
